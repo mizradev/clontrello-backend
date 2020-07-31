@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from tarjetas.models import Tarjetas
+from cards.models import Cards
 
-class TarjetaSerializer(serializers.ModelSerializer):
+class CardsSerializer(serializers.ModelSerializer):
 	"""docstring for TarjetaSerializer"""
 	class Meta:
-		model = Tarjeta
-		fields = ['nombre', 'descripcion']
+		model = Cards
+		fields = ['name', 'description']
