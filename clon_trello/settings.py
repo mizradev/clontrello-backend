@@ -12,8 +12,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+# use .env
+from decouple import config
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#=a-#%8l_6e@3nfp@vn-^ul7s3h@q87#k-z)62y3@5uxm!l)kk'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # local apps
-    'tarjetas',
-    'comentarios',
+    'cards',
+    'comments',
     'lists',
     'users',
     'boards'
@@ -80,10 +83,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['DB_NAME_DJANGO'],
-        'USER': os.environ['DB_USER_DJANGO'],
-        'PASSWORD': os.environ['DB_PASSWORD_DJANGO'],
-        'HOST': os.environ['CLOUD_SQL_INSTANCE_IP'],
+        'NAME': config('DB_NAME_DJANGO'),
+        'USER': config('DB_USER_DJANGO'),
+        'PASSWORD': config('DB_PASSWORD_DJANGO'),
+        'HOST': config('CLOUD_SQL_INSTANCE_IP'),
         'PORT': 5432,
     }
 }
