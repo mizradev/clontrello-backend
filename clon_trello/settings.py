@@ -33,7 +33,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # local apps
     'tarjetas',
-    'comentarios'
+    'comentarios',
+    'lists',
+    'users',
+    'boards'
 ]
 
 MIDDLEWARE = [
@@ -77,11 +80,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'clontrello',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ['DB_NAME_DJANGO'],
+        'USER': os.environ['DB_USER_DJANGO'],
+        'PASSWORD': os.environ['DB_PASSWORD_DJANGO'],
+        'HOST': os.environ['CLOUD_SQL_INSTANCE_IP'],
+        'PORT': 5432,
     }
 }
 
