@@ -3,6 +3,7 @@ from django.db import models
 from lists.models import List
 from users.models import User
 
+
 class Cards(models.Model):
 	name = models.CharField(max_length=100)
 	list = models.ForeignKey(List, on_delete=models.CASCADE) #(Llave foránea)
