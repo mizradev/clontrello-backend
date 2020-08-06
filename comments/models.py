@@ -1,12 +1,11 @@
 from django.db import models
 
 from users.models import User
-from cards.models import Cards
+from cards.models import Card
 
-
-class Comments(models.Model):
+class Comment(models.Model):
 	"""docstring for Comentarios"""
-	card = models.ForeignKey(Cards, on_delete=models.CASCADE)
+	card = models.ForeignKey(Card, on_delete=models.CASCADE)
 	message = models.TextField()
 	owner = models.ForeignKey(User, on_delete=models.CASCADE)
 	creation_date = models.DateTimeField(auto_now_add=True)

@@ -4,7 +4,7 @@ from lists.models import List
 from users.models import User
 
 
-class Cards(models.Model):
+class Card(models.Model):
 	name = models.CharField(max_length=100)
 	list = models.ForeignKey(List, on_delete=models.CASCADE) #(Llave foránea)
 	description = models.TextField(max_length=100)
