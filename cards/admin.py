@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from cards.models import Cards
+from cards.models import Card
 
-admin.site.register(Cards)
+admin.site.register(Card)

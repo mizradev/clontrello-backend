@@ -9,7 +9,7 @@ class Card(models.Model):
 	list = models.ForeignKey(List, on_delete=models.CASCADE) #(Llave foránea)
 	description = models.TextField(max_length=100)
 	members = models.ManyToManyField(User)
-	owner = models.ForeignKey(User, on_delete=models.CASCADE) #(Llave foránea)
+	owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cards') #(Llave foránea)
 	creation_date = models.DateTimeField(auto_now_add=True)
 	due_date = models.DateTimeField(null=True)
 

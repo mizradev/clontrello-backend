@@ -77,18 +77,15 @@ WSGI_APPLICATION = 'clon_trello.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME_DJANGO'),
-        'USER': config('DB_USER_DJANGO'),
-        'PASSWORD': config('DB_PASSWORD_DJANGO'),
-        'HOST': config('CLOUD_SQL_INSTANCE_IP'),
-        'PORT': 5432,
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": config('LOCAL_DB_NAME'),
+        "USER": config('LOCAL_DB_USER'),
+        "PASSWORD": config('LOCAL_DB_PASSWORD'),
+        "HOST": "localhost",
+        "PORT": "5432",
     }
+
 }
 
 
