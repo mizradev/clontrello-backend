@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from decouple import config
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = '#=a-#%8l_6e@3nfp@vn-^ul7s3h@q87#k-z)62y3@5uxm!l)kk'
 
 
 # Application definition
